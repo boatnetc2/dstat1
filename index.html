@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DStat Dashboard</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+    }
+    #layer7 {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    #layer4 {
+      display: none;
+    }
+    .highcharts-background {
+      fill: #1e1e1e !important;
+    }
+    .highcharts-title, .highcharts-legend-item text {
+      fill: #e0e0e0 !important;
+    }
+    .highcharts-axis-line, .highcharts-axis-title {
+      stroke: #e0e0e0 !important;
+    }
+    .highcharts-xaxis-labels, .highcharts-yaxis-labels {
+      fill: #e0e0e0 !important;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">📊 DStat Live Dashboard</h1>
+  <div id="layer7"></div>
+  <br />
+  <div id="layer4"></div>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+
+  <!-- Highcharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/highcharts.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/exporting.min.js"
+    crossorigin="anonymous"></script>
+
+  <script>
+    Highcharts.chart('layer7', {
+      chart: {
+        type: 'spline',
+        backgroundColor: '#1e1e1e'
+      },
+      title: {
+        text: 'Request Per Second (RPS)',
+        style: { color: '#e0e0e0' }
+      },
+      xAxis: {
+        categories: ['1s', '2s', '3s', '4s', '5s', '6s'],
+        labels: { style: { color: '#e0e0e0' } }
+      },
+      yAxis: {
+        title: {
+          text: 'Requests',
+          style: { color: '#e0e0e0' }
+        },
+        labels: { style: { color: '#e0e0e0' } }
+      },
+      series: [{
+        name: 'RPS',
+        data: [120, 150, 180, 140, 160, 170],
+        color: '#00ffcc'
+      }]
+    });
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 //EN - FR
 //CONFIGURATION - CONFIG
 //SITE NAME - Nom du site
-$sitename = 'DSTAT - daudau.org';
+$sitename = 'DSTAT - chiến•SEX';
 // CAPS ONLY - Majuscule seulement
 
 //Bit or byte - Bit ou octet
